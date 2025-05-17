@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  gateway:
+    build: .
+    container_name: gateway-service
+    restart: unless-stopped
+    ports:
+      - "4000:4000" # Modifie si ton service écoute sur un autre port
+    env_file: .env
+    volumes:
+      - .:/app
+    networks:
+      - app-network
+    depends_on:
+      - authentication
+      - syndic
+      - fees
+      - meetings
+
+  # Optionnel : tu peux ajouter les autres services comme dépendances si nécessaire
+  authentication:
+    image: fekihnejmeddine/authentication-service:latest
+    networks:
+      - app-network
+
+  syndic:
+    image: fekihnejmeddine/syndic-service:latest
+    networks:
+      - app-network
+
+  fees:
+    image: fekihnejmeddine/fees-service:latest
+    networks:
+      - app-network
+
+  meetings:
+    image: fekihnejmeddine/meetings-service:latest
+    networks:
+      - app-network
+
+networks:
+  app-network:
