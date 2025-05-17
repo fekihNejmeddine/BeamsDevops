@@ -16,7 +16,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: mysql-db
+    container_name: mysql-db-meeting
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: example
