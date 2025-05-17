@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     ports:
       - "4000:4000" # Modifie si ton service écoute sur un autre port
-    env_file: .env
+    # env_file: .env
     volumes:
       - .:/app
     networks:
