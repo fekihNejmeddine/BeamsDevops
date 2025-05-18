@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    container_name: node-app
+    container_name: meeting_service
     restart: unless-stopped
     ports:
       - "4004:4004"

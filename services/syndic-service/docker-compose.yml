@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    container_name: node-app
+    container_name: syndic_service
     restart: unless-stopped
     ports:
       - "4002:4002"
