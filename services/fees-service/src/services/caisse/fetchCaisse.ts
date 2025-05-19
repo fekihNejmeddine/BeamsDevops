@@ -43,8 +43,8 @@ const fetchAllCaisses = async () => {
     const caisse = await Caisse.findAll();
     return caisse;
   } catch (error: any) {
-    console.error("Error Fetching Data:", error.message);
-    throw new Error("Error Fetching Data");
+    console.error("🔥 Sequelize error:", error); // log complet de l'erreur
+    throw error;
   }
 };
 // Fetch Caisse by ID
