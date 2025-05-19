@@ -2,7 +2,12 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
 const ACCESS_secretKey = process.env.JWT_ACCESS_SECRET_KEY as string;
-
+declare module "express-serve-static-core" {
+  interface Request {
+    user?: any; // ou un type précis comme JwtPayload si tu l’as défini
+    role?: string;
+  }
+}
 export function authenticateToken(
   req: Request,
   res: Response,
@@ -27,8 +32,7 @@ export function authenticateToken(
     }
 
     req.user = user;
-    (req as any).role = user.role; 
-
+    req.role = user.role;
     next();
   });
 }

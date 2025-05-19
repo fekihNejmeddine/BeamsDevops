@@ -34,7 +34,7 @@ const fetchAllCaisses = async (req: Request, res: Response): Promise<void> => {
     const caisse = await caisseService.fetchAllCaisses();
     res.status(200).json(caisse);
   } catch (error) {
-    res.status(401).json({ message: "Error fetching users by role" });
+    res.status(401).json({ message: "Error fetching caisses" });
   }
 };
 const fetchCaisse = async (req: Request, res: Response): Promise<void> => {
