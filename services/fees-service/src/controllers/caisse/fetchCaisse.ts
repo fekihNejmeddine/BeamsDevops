@@ -31,12 +31,14 @@ const fetchCaisses = async (req: Request, res: Response): Promise<void> => {
 };
 const fetchAllCaisses = async (req: Request, res: Response): Promise<void> => {
   try {
-    const caisse = await caisseService.fetchAllCaisses();
-    res.status(200).json(caisse);
-  } catch (error) {
-    res.status(401).json({ message: "Error fetching caisses" });
+    const caisses = await caisseService.fetchAllCaisses();
+    res.status(200).json(caisses);
+  } catch (error: any) {
+    console.error("Controller Error:", error.message);
+    res.status(500).json({ message: "Error fetching caisses", error: error.message });
   }
 };
+
 const fetchCaisse = async (req: Request, res: Response): Promise<void> => {
   try {
     const caisse = await caisseService.fetchCaisse(req.params.id);
