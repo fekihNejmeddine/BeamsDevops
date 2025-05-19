@@ -19,7 +19,7 @@ services:
     container_name: mysql-db-syndic
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_ROOT_PASSWORD: myPassword
       MYSQL_DATABASE: syndic_db
     ports:
       - "3309:3306"

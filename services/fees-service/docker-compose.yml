@@ -19,7 +19,7 @@ services:
     container_name: mysql-db-fees
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_ROOT_PASSWORD: myPassword
       MYSQL_DATABASE: fees_db
     ports:
       - "3307:3306"
