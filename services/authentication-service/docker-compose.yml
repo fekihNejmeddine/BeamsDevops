@@ -16,7 +16,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: mysql-db
+    container_name: mysql-db-auth
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD:
@@ -29,7 +29,7 @@ services:
       - app-network
 
 volumes:
-  db-data:
+  db-data: auth-db-data	
 
 networks:
   app-network:
