@@ -40,7 +40,7 @@ Caisse.init(
   {
     sequelize,
     modelName: "Caisse",
-    tableName: "Caisses",
+    tableName: "caisses",
   }
 );
 
