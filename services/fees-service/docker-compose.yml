@@ -29,7 +29,7 @@ services:
       - app-network
 
 volumes:
-  db-data:	fees-db-data
+  db-data:
 
 networks:
   app-network:

@@ -29,7 +29,7 @@ services:
       - app-network
 
 volumes:
-  db-data: auth-db-data	
+  db-data: 
 
 networks:
   app-network:
