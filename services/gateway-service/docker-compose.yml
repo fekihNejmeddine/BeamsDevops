@@ -18,26 +18,26 @@ services:
       - fees
       - meetings
 
-  # Optionnel : tu peux ajouter les autres services comme dépendances si nécessaire
-  authentication:
-    image: fekihnejmeddine/authentication-service:latest
-    networks:
-      - app-network
+  # # Optionnel : tu peux ajouter les autres services comme dépendances si nécessaire
+  # authentication:
+  #   image: fekihnejmeddine/authentication-service:latest
+  #   networks:
+  #     - app-network
 
-  syndic:
-    image: fekihnejmeddine/syndic-service:latest
-    networks:
-      - app-network
+  # syndic:
+  #   image: fekihnejmeddine/syndic-service:latest
+  #   networks:
+  #     - app-network
 
-  fees:
-    image: fekihnejmeddine/fees-service:latest
-    networks:
-      - app-network
+  # fees:
+  #   image: fekihnejmeddine/fees-service:latest
+  #   networks:
+  #     - app-network
 
-  meetings:
-    image: fekihnejmeddine/meetings-service:latest
-    networks:
-      - app-network
+  # meetings:
+  #   image: fekihnejmeddine/meetings-service:latest
+  #   networks:
+  #     - app-network
 
 networks:
   app-network:
