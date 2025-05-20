@@ -6,7 +6,8 @@ services:
     ports:
       - "4001:4001"
     # Supprime ou commente cette ligne si tu n'as pas de fichier .env
-    # env_file: .env
+    env_file: 
+      .env
     depends_on:
       - db
     volumes:
@@ -29,7 +30,7 @@ services:
       - app-network
 
 volumes:
-  db-data: 
+  db-data:
 
 networks:
   app-network:
