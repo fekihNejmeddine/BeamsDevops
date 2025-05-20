@@ -3,7 +3,12 @@ import jwt from "jsonwebtoken";
 import { IUser } from "../interface/IUser";
 
 const ACCESS_secretKey = process.env.JWT_ACCESS_SECRET_KEY as string;
-
+declare module "express-serve-static-core" {
+  interface Request {
+    user?: any; // ou un type précis comme JwtPayload si tu l’as défini
+    role?: string;
+  }
+}
 export function authenticateToken(
   req: Request,
   res: Response,
