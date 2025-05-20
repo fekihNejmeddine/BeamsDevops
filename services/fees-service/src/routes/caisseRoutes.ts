@@ -11,7 +11,11 @@ const router = express.Router();
 
 router.post(PATHS.CAISSE.CREATE_CAISSE, createCaisseHandler);
 
-router.get(PATHS.CAISSE.GET_ALL_CAISSE, fetchCaisses.fetchCaisses);
+router.get(
+  PATHS.CAISSE.GET_ALL_CAISSE,
+  verifyRole(ROLES.RH || ROLES.ADMIN),
+  fetchCaisses.fetchCaisses
+);
 router.get(PATHS.CAISSE.GET_CAISSE, fetchCaisses.fetchAllCaisses);
 
 router.delete(PATHS.CAISSE.DELETE_CAISSE, deleteCaisse);
