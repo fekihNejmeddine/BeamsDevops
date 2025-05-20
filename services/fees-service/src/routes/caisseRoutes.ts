@@ -16,7 +16,11 @@ router.get(
   verifyRole(ROLES.RH || ROLES.ADMIN),
   fetchCaisses.fetchCaisses
 );
-router.get(PATHS.CAISSE.GET_CAISSE, fetchCaisses.fetchAllCaisses);
+router.get(
+  PATHS.CAISSE.GET_CAISSE,
+  verifyRole(ROLES.RH || ROLES.ADMIN),
+  fetchCaisses.fetchAllCaisses
+);
 
 router.delete(PATHS.CAISSE.DELETE_CAISSE, deleteCaisse);
 
