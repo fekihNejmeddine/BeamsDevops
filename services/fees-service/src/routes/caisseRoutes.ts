@@ -14,13 +14,13 @@ router.post(PATHS.CAISSE.CREATE_CAISSE, createCaisseHandler);
 router.get(
   PATHS.CAISSE.GET_ALL_CAISSE,
   //verifyRole(ROLES.RH || ROLES.ADMIN),
-  authenticateToken,
+  //authenticateToken,
   fetchCaisses.fetchCaisses
 );
 router.get(
   PATHS.CAISSE.GET_CAISSE,
   //verifyRole(ROLES.RH || ROLES.ADMIN),
-  authenticateToken,
+  //authenticateToken,
   fetchCaisses.fetchAllCaisses
 );
 
