@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 export const sequelize = new Sequelize('fees_db', 'root', 'myPassword', {
   host: 'mysql-db-fees',
-  port: 3307,
+  port: 3306,
   dialect: 'mysql'
 });
 
