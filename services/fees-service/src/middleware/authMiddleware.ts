@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const ACCESS_secretKey = process.env.JWT_ACCESS_SECRET_KEY as string;
 declare module "express-serve-static-core" {
@@ -27,6 +29,7 @@ export function authenticateToken(
 
   jwt.verify(token, ACCESS_secretKey, (err, user: any) => {
     if (err) {
+      
       res.status(403).json({ message: "Forbidden: Invalid token!" });
       return;
     }
