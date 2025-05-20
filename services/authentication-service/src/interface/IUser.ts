@@ -19,8 +19,7 @@ export interface IUser {
   Status?: Boolean;
   Gender?: Gendre;
   refreshToken?: string;
-  updatedAt?: string;
-  createdAt?: number;
+
   resetToken?: string | null;
   resetTokenExpiry?: Date | null;
   isDeleted?: boolean;

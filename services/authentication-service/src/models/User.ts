@@ -11,8 +11,7 @@ export class User extends Model<IUser> implements IUser {
   public role!: UserRole;
   public Gender!: Gendre;
   public refreshToken?: string;
-  public updatedAt?: string;
-  public createdAt?: number;
+
   public resetToken?: string;
   public resetTokenExpiry?: Date;
   public isDeleted!: boolean;
@@ -57,16 +56,7 @@ User.init(
       allowNull: true,
     },
 
-    updatedAt: {
-      type: DataTypes.STRING,
-    },
-    createdAt: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: User,
-        key: "id",
-      },
-    },
+   
     resetToken: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -83,11 +73,7 @@ User.init(
   {
     sequelize,
     tableName: "users",
-    timestamps: false, // Set to false if you are handling `createdAt` and `modifiedAt` manually
-    hooks: {
-      beforeSave: (user) => {
-        user.updatedAt = new Date().toISOString();
-      },
-    },
+    timestamps: true, // Set to false if you are handling `createdAt` and `modifiedAt` manually
+   
   }
 );
