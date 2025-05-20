@@ -73,7 +73,7 @@ User.init(
   {
     sequelize,
     tableName: "users",
-    timestamps: true, // Set to false if you are handling `createdAt` and `modifiedAt` manually
+    timestamps: false, // Set to false if you are handling `createdAt` and `modifiedAt` manually
    
   }
 );
